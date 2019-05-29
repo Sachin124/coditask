@@ -57,3 +57,88 @@ input[type=text], select {
   input[type=submit]:hover {
     background-color: #45a049;
   }
+
+  /* Card like bootstrap */
+
+  .card {
+    width: 80%;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+    padding: 0px;
+    margin: auto;
+    margin-top: 15px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .card-body h4 {
+    font-family: "CeraGR-Medium";
+    font-size: 28px;
+  }
+  
+  .card-body button {
+    float: right;
+    background-color: #008cba; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+  }
+  
+  .card-body p {
+    font-family: "CeraGR-Light";
+  }
+  
+  .card-title {
+    font-family: "CeraGR-Medium";
+    font-size: 16px;
+    color: rgb(69, 74, 83);
+    padding: 12px;
+  }
+  
+  .media:last-child {
+    border-bottom: 0;
+  }
+  
+  .media {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .widget-icon {
+    display: inline-block;
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 7.5rem;
+  }
+  
+  .ml-3,
+  .mx-3 {
+    margin-left: 1rem !important;
+  }
+  .align-self-center {
+    align-self: center !important;
+  }
+  .media-body {
+    flex: 1;
+  }
+  
+  .pull-right{
+    float: right;
+  }
