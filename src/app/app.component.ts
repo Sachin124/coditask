@@ -14,7 +14,10 @@ export class AppComponent {
   userRepository: any;
   sortingTypes: any[] = [
     { id: 1, type: "A to Z" },
-    { id: 2, type: "Z to A" }
+    { id: 2, type: "Z to A" },
+    { id: 3, type: "Rank ^" },
+    { id: 4, type: "Rank <" }
+
   ]
   constructor(private dataService: DataService) {
 
@@ -23,15 +26,12 @@ export class AppComponent {
   getUsers(keyword) {
     this.dataService.getUsers(keyword).subscribe(res => {
       this.usersData = res.items;
-      console.log(this.usersData);
-
     }, error => {
       console.log(error);
     })
   }
 
   getRepo(userName) {
-    console.log(userName);
     this.isCollapsed = true;
     this.dataService.getUserRepo(userName).subscribe(res => {
       console.log(res);
@@ -43,7 +43,6 @@ export class AppComponent {
   }
 
   sortType(sort) {
-    console.log(sort);
     if (this.usersData) {
     if (sort == 1) {
       this.usersData = this.usersData.sort((a, b) => {
@@ -52,11 +51,20 @@ export class AppComponent {
         return 0;
       })
     }
-    else if (sort == 2) {
-     
+    else if (sort == 2) {     
         this.usersData = this.usersData.reverse();
       }
+      else if (sort == 3) {     
+        this.usersData = this.usersData.sort((a, b)=> { 
+          return b.score - a.score;
+        });
+      }else if (sort == 4) {     
+        this.usersData = this.usersData.sort((a, b)=> { 
+          return a.score - b.score;
+        });
+      }
     }
+    console.log(this.usersData);
+    
   }
-
 }

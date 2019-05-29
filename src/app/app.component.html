@@ -1,7 +1,7 @@
 <nav>
   <ul>      
     <li>
-      <select id="country" [(ngModel)]="sortingType" name="sortingType" (click)="sortType(sortingType)">
+      <select id="country" [(ngModel)]="sortingType" name="sortingType" (change)="sortType(sortingType)">
         <option *ngFor="let sort of sortingTypes" [value]="sort.id" >{{sort.type}}</option>
       </select>
     </li>
