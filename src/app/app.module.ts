@@ -6,9 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination'; 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ViewUsersComponent } from './view-users/view-users.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewUsersComponent
   ],
   imports: [
     BrowserModule,

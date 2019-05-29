@@ -1,51 +1,40 @@
 <nav>
   <ul>
     <li>
-      <select id="country" [(ngModel)]="sortingType" name="sortingType" (change)="sortType(sortingType)">
+      <select id="country" class="form-control" [(ngModel)]="sortingType" name="sortingType" (change)="sortType(sortingType)">
         <option *ngFor="let sort of sortingTypes" [value]="sort.id">{{sort.type}}</option>
       </select>
     </li>
     <li>
-      <input type="text" placeholder="Search" name="searchQuery" (change)="getUsers($event.target.value)" />
+      <input type="text" class="form-control" placeholder="Search and enter" name="searchQuery" (change)="getUsers($event.target.value)" />
     </li>
   </ul>
 </nav>
+<div class="container" *ngIf="this.usersData.length === 0">
+    <div class="jumbotron">
+        <h4 class="display-4">Front end assignment - Coditas Technology Pvt. Ltd.</h4>
+        <p class="lead">Developer: Sachin S. Bahegavankar</p>
+        <p>Angular Developer</p>
+        <p>Mobile: <a href="tel:8888222180">8888222180</a></p>
 
-<div class="card" *ngFor="let row of usersData  | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
-  <div class="card-body">
-    <div class="widget-left border-0">
-      <div class="media">
-        <span class="widget-icon">
-          <img src={{row.avatar_url}} alt="">
-        </span>
-        <div class="media-body align-self-center ml-3">
-          <h4 class="text-grey">{{row.login}}</h4>
-          <p class="text-muted mb-0">Profile URL: {{row.url}}</p>
 
-          <button type="button" (click)="isCollapsed = !isCollapsed; getRepo(row)" [attr.aria-expanded]="!isCollapsed"
-            [attr.aria-controls]="'collapseEvent'+ i">Details
-          </button>
-        </div>
+        <hr class="my-4">
+        <h3 class="display-4">What is this application?</h3>
+        <p>Following are key points to this application:</p>
+        <ul>
+          <li>Search GitHub users and see the Information about that User!</li>
+          <li>After getting the list click on the "Details" button to view user Repositories and programming language!</li>
+          <li>If you want to sort the list there is 4 types for the sorting Users Data as:
+            <ul> <li> Sort By Alphabetically name (Ascending)</li>
+
+              <li> Sort By Alphabetically name (Descending)</li>
+              <li> Sort By Ranking/Highest Score (Ascending)</li>
+              <li> Sort By Ranking/Highest Score (Descending)</li>
+            </ul>
+          </li>
+        </ul>
+        <p>In this application I am using 1 third party library for pagination and some css (using bootstrap framework) but I also created in styles.css file.</p>
+
       </div>
-    </div>
-
-    <div [id]="'collapseEvent' + i" [isAnimated]="true" [collapse]="isCollapsed">
-
-      <div class="media-body">
-        <table class="table">
-          <tbody>
-            <tr *ngFor="let repo of row.userRepositories">
-              <td>{{repo.name}}</td>
-              <td>{{repo.language}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </div>
 </div>
-
-<div class="pull-right" *ngIf="this.usersData">
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
+<app-view-users [usersData]="usersData"></app-view-users>
