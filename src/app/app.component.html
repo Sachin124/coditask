@@ -1,10 +1,8 @@
 <nav>
   <ul>      
     <li>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
+      <select id="country" [(ngModel)]="sortingType" name="sortingType" (click)="sortType(sortingType)">
+        <option *ngFor="let sort of sortingTypes" [value]="sort.id" >{{sort.type}}</option>
       </select>
     </li>
     <li>
@@ -24,15 +22,21 @@
         <div class="media-body align-self-center ml-3">
           <h4 class="text-grey">{{row.login}}</h4>
           <p class="text-muted mb-0">Profile URL: {{row.url}}</p>
-          <button  type="button" (click)="collapse()" >Collapse</button>
+          <button  type="button" (click)="getRepo(row.login)" >Details</button>
         </div>
-      </div>
-      <div *ngIf="isCollapse" class="media-body align-self-center ml-3">
-        <h4 class="text-grey">{{row.login}}</h4>
-        <p class="text-muted mb-0">Profile URL: {{row.url}}</p>
-      </div>
+      </div>    
     </div>
   </div>
+</div>
+<div *ngIf="isCollapsed" class="media-body align-self-center ml-3">
+  <table class="table">
+    <tbody>
+      <tr *ngFor="let repo of userRepository">
+        <td>{{repo.name}}</td>
+        <td>{{repo.language}}</td>
+      </tr>
+    </tbody>
+   </table>
 </div>
 
 <div class="pull-right" *ngIf="this.usersData">
