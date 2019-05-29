@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination'; 
-import { CollapseModule } from 'ngx-bootstrap/collapse';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ViewUsersComponent } from './view-users/view-users.component';
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { ViewUsersComponent } from './view-users/view-users.component';
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
-    BrowserAnimationsModule,
-    CollapseModule.forRoot()
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

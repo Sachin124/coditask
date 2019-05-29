@@ -1,14 +1,19 @@
 <nav>
-  <ul>
-    <li>
-      <select id="country" class="form-control" [(ngModel)]="sortingType" name="sortingType" (change)="sortType(sortingType)">
-        <option *ngFor="let sort of sortingTypes" [value]="sort.id">{{sort.type}}</option>
-      </select>
-    </li>
-    <li>
-      <input type="text" class="form-control" placeholder="Search and enter" name="searchQuery" (change)="getUsers($event.target.value)" />
-    </li>
-  </ul>
+    <ul>
+        <li>
+            <!-- <select id="country" class="form-control" [(ngModel)]="sortingType" name="sortingType" (change)="sortType(sortingType)">
+            <option *ngFor="let sort of sortingTypes" [value]="sort.id">{{sort.type}}</option>
+            </select> -->
+            <select class="form-control mr-100" (change)='sortType($event.target.value)'>
+                <option *ngFor="let group of sortingTypes" value={{group.id}} [selected]="group.type">
+                    {{group.type}}
+                </option>
+            </select>
+        </li>
+        <li>
+            <input type="text" class="form-control" placeholder="Search and enter" name="searchQuery" (change)="getUsers($event.target.value)" />
+        </li>
+    </ul>
 </nav>
 <div class="container" *ngIf="this.usersData.length === 0">
     <div class="jumbotron">
@@ -16,25 +21,25 @@
         <p class="lead">Developer: Sachin S. Bahegavankar</p>
         <p>Angular Developer</p>
         <p>Mobile: <a href="tel:8888222180">8888222180</a></p>
-
+        <p>Email: <a href="mailTo:sachinb2193@gmail.com">sachinb2193@gmail.com</a></p>
 
         <hr class="my-4">
         <h3 class="display-4">What is this application?</h3>
         <p>Following are key points to this application:</p>
         <ul>
-          <li>Search GitHub users and see the Information about that User!</li>
-          <li>After getting the list click on the "Details" button to view user Repositories and programming language!</li>
-          <li>If you want to sort the list there is 4 types for the sorting Users Data as:
-            <ul> <li> Sort By Alphabetically name (Ascending)</li>
-
-              <li> Sort By Alphabetically name (Descending)</li>
-              <li> Sort By Ranking/Highest Score (Ascending)</li>
-              <li> Sort By Ranking/Highest Score (Descending)</li>
-            </ul>
-          </li>
+            <li>Search GitHub users and see the Information about that User!</li>
+            <li>After getting the list click on the "Details" button to view user Repositories and programming language!</li>
+            <li>
+                If you want to sort the list there is 4 types for the sorting Users Data as:
+                <ul>
+                    <li> Sort By Alphabetically name (Ascending)</li>
+                    <li> Sort By Alphabetically name (Descending)</li>
+                    <li> Sort By Ranking/Highest Score (Ascending)</li>
+                    <li> Sort By Ranking/Highest Score (Descending)</li>
+                </ul>
+            </li>
         </ul>
         <p>In this application I am using 1 third party library for pagination and some css (using bootstrap framework) but I also created in styles.css file.</p>
-
-      </div>
+    </div>
 </div>
 <app-view-users [usersData]="usersData"></app-view-users>

@@ -34,7 +34,9 @@ nav li {
 
 
 /* Input box */
-
+.mr-100{
+  margin-right: 100px;
+}
 input[type=text],
 select {
   width: 100%;

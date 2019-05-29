@@ -1,4 +1,7 @@
 <div *ngIf="this.usersData.length !== 0" class="text-center">
+  <br />
+  <br />
+
     <p> Total Results: {{this.usersData.length}}</p>
     </div>
     <div class="card" *ngFor="let row of usersData  | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">

@@ -3,13 +3,12 @@ import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-view-users',
-  templateUrl: './view-users.component.html',
-  styleUrls: ['./view-users.component.css']
+  templateUrl: './view-users.component.html'
 })
-export class ViewUsersComponent{
+export class ViewUsersComponent {
   loader: boolean;
   userRepository: any;
-@Input() usersData: any[] = [];
+  @Input() usersData: any[] = [];
   constructor(private dataService: DataService) { }
 
   getRepo(userName) {

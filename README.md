@@ -1,27 +1,32 @@
-# Coditas
+# GitHub Users Informations
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+# what is this application?
+~ Search GitHub users and see the Information about that User!
 
-## Development server
+~ After getting the list click on the "Details" button to view user Repositories and programming language!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+~If you want to sort the list there is 4 types for the sorting Users Data as:
+                    Sort By Alphabetically name (Ascending)
+                    Sort By Alphabetically name (Descending)
+                    Sort By Ranking/Highest Score (Ascending)
+                    Sort By Ranking/Highest Score (Descending)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# How to Run this Project
 
-## Build
+~ Open This Project in Visual Studio Code.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+~ Open Visual Studio Terminal 
 
-## Running unit tests
+# To open the terminal:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use the Ctrl+` keyboard shortcut with the backtick character.
+Use the View | Integrated Terminal menu command.
+From the Command Palette (Ctrl+Shift+P), use the View:Toggle Integrated Terminal command.
 
-## Running end-to-end tests
+# Check You are in correct folder path 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+type command in terminal 
+# npm install
+# ng serve
+# open in browser localhost:4200
