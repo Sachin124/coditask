@@ -44,27 +44,43 @@ export class AppComponent {
 
   sortType(sort) {
     if (this.usersData) {
-    if (sort == 1) {
-      this.usersData = this.usersData.sort((a, b) => {
-        if (a.login < b.login) { return -1; }
-        if (a.login > b.login) { return 1; }
-        return 0;
-      })
-    }
-    else if (sort == 2) {     
-        this.usersData = this.usersData.reverse();
+      switch (Number(sort)) {
+        case 1:
+          this.usersData = this.usersData.sort((a, b) => {
+            if (a.login < b.login) { return -1; }
+            if (a.login > b.login) { return 1; }
+            return 0;
+          })
+          break;
+  
+        case 2:
+        this.usersData = this.usersData.sort((a, b) => {
+          if (a.login < b.login) { return -1; }
+          if (a.login > b.login) { return 1; }
+          return 0;
+        })
+          this.usersData = this.usersData.reverse();
+          break;
+  
+        case 3:
+          this.usersData = this.usersData.sort((a, b) => {
+            return b.score - a.score;
+          });
+          break;
+  
+        case 4:
+          this.usersData = this.usersData.sort((a, b) => {
+            return a.score - b.score;
+          });
+          break;
+  
+        default:
+          break;
       }
-      else if (sort == 3) {     
-        this.usersData = this.usersData.sort((a, b)=> { 
-          return b.score - a.score;
-        });
-      }else if (sort == 4) {     
-        this.usersData = this.usersData.sort((a, b)=> { 
-          return a.score - b.score;
-        });
-      }
     }
-    console.log(this.usersData);
+
     
+    console.log(this.usersData);
+
   }
 }
