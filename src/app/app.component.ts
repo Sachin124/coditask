@@ -9,7 +9,7 @@ import { DataService } from './service/data.service';
 export class AppComponent {
   title = 'app';
   searchQuery;
-  usersData: any;
+  usersData: any[]=[];
   isCollapsed: boolean = false;
   userRepository: any;
   sortingTypes: any[] = [
@@ -32,10 +32,14 @@ export class AppComponent {
   }
 
   getRepo(userName) {
-    this.isCollapsed = true;
-    this.dataService.getUserRepo(userName).subscribe(res => {
+    this.dataService.getUserRepo(userName.login).subscribe(res => {
       console.log(res);
       this.userRepository = res;
+      const customerIndex = this.usersData.findIndex(p=>{
+        return p.id === userName.id;
+      });
+      this.usersData[customerIndex].userRepositories = this.userRepository;
+console.log(this.usersData[customerIndex]);
     }, error => {
       console.log(error);
 
