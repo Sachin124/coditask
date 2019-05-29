@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* Navigation Bar */
+
+nav {
+    width: 100%;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #1976d2;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    text-align:center;
+  }
+  
+  nav li {
+      display:inline-block;
+      *display:inline; /*IE7*/
+      *zoom:1; /*IE7*/
+    color: white;
+    padding: 0px 16px;
+    text-decoration: none;
+  }
+
+
+  /* Input box */
+  
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-right: 100px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
